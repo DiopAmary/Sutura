@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://bootswatch.com/4/flatly/bootstrap.min.css"  type="text/css" rel="stylesheet">
+    <link href="https://bootswatch.com/bootstrap.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+    </head>
+  {% block body %}
+  {% endblock %}
+       {% block stylesheets %}
+          
+        {% endblock %}
+			<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<div class="logo">
+						<a href="index.html">Sutura</a><span>Maroc</span>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="login.html">Se déconnecter</a></li>
+						</ul>
+					</nav>
+
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper alt">
+				<div class="inner">
+
+					<!-- Content -->
+						<header>
+							<b><h2>Bienvenue!</h2></b>
+							<p>Nom de l'étudiant</p>
+						</header>
+					<!-- Image -->
+							<h3>Image de solidarité</h3>
+							<span class="image fit"><img src="images/pic07.jpg" alt="" /></span>
+
+					<hr class="major" />
+					<!-- Elements -->
+					
+						<div class="row gtr-200">
+							<div class="col-6 col-12-medium">
+								<div class="split">
+									<section>
+										<div class="ratings">
+											<article>
+												<b><h2>Etat de la caisse</h2></b>
+												<p>En temps réel</p>
+											<!-- mettre une variable qui contient l'état de la caisse en pourcentage -->
+												<div class="progress" data-progress="80">80%</div>
+											</article>
+										</div>
+									</section>
+								</div>
+								<b><h2>Tableau de bord</h2></b>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Eléments</th>
+													<th>Valeurs</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Cotisation:</td>
+													<td>100</td>
+													<td>MAD</td>
+												</tr>
+												<tr>
+													<td>Expire le:</td>
+													<td>31/12/2021</td>
+												</tr>
+												<tr>
+													<td>Nombre de prêts</td>
+													<td> valeur_variable</td>
+												</tr>
+												<tr>
+													<td>Nombre de remboursements</td>
+													<td>Valeur_valeur/nombre_prêt</td>
+												</tr>
+												<tr>
+													<td>Echéance(prêt)</td>
+													<td>échéance</td>
+												</tr>
+												<tr>
+													<td>Demande en cours de traitement</td>
+													<td>Néant</td>
+												</tr>
+												<tr>
+													<td>Montant dû:</td>
+													<td>valeur_montant_prêt</td>
+													<td>MAD</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="1"></td>
+													<td>Dernière mise à jour: 27/02/2021</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+									<!-- Form 
+									<b><h2 id="Demande_pret">Demande de prêt</h2></b>
+
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">Montant souhaité:
+												<input type="number" name="demo-name" id="demo-name" value="" placeholder="La valeur en MAD" />
+											</div>
+											<div class="col-6 col-12-xsmall">Echéance de paiement:
+												<input type="date" name="echeance" id="echeance" value="" placeholder="Entrer la valeur souhaitée en MAD" />
+											</div>
+											<!-- Break 
+											<div class="col-12-large">
+												<select name="demo-category" id="demo-category">
+													<option value="">- Catégorie de la demande -</option>
+													<option value="1">Santé</option>
+													<option value="1">Autres</option>
+												</select>
+											</div>
+											<div class="col-12-large">
+												<ul class="actions">
+													<li>Joindre un justificatif (facultatif): <a href="#" class="button icon solid fa-download">Icon</a></li>
+												</ul>
+											</div>
+											<div class="col-12-large">
+												<ul class="actions">
+													<li>Joindre photo passeport ou carte séjour en cours de validité: <a href="#" class="button icon solid fa-download">Icon</a></li>
+												</ul>
+											</div>
+											<div class="col-12-large">
+												<ul class="actions">
+													<li>Joindre un RIB (facultatif): <a href="#" class="button icon solid fa-download">Icon</a></li>
+												</ul>
+											</div>
+											
+											<!-- Break 
+											<div class="col-12">
+												<textarea name="message_demande" id="message_demande" placeholder="Votre commentaire pour nous aider à mieux prendre en compte votre demande" rows="6"></textarea>
+											</div>
+											<!-- Break 
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer la demande" class="primary" /></li>
+													
+												</ul>
+											</div>
+										</div>
+									</form>
+							
+									<hr />
+
+								
+									
+									</div>
+							<div id="message" class="col-6 col-12-medium">
+								<!-- Blockquote -->
+									<b><h2>Dernier message</h2></b>
+									<blockquote>S'il n'y a pas de message non lu. On affichera ici un texte par défaut. Par exemple: Madame/monsieur merci de l'intérêt que vous portez à cette mutuelle qui assure la solidarité, l'engagement et la proximité. Sutura permet d'assister les étudiants en cas de besoin ponctuel éventuel. On peut essayer de faire un chatbot qui sera plus simple.</blockquote>
+								
+								<div class="row gtr-uniform">
+								<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer email" class="primary" /></li>
+												</ul>
+											</div>
+											</div>
+								
+								
+								<!-- Form -->
+									<b><h2 id="remboursement">Déclaration de remboursement</h2></b>
+									
+									
+
+									<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<!-- Break 
+											<div class="col-6 col-12-xsmall">
+												<ul class="actions">
+													<li>Joindre un justificatif (obligatoire): <a href="#" class="button icon solid fa-download">Icon</a></li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-xsmall">Date de paiement:
+												<input type="date" name="date_remboursement" id="date_remboursement" value="" placeholder="" />
+											</div>
+											<!-- Break -
+											<div class="col-4 col-12-small">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Paiement intégral</label>
+											</div>
+											<div class="col-4 col-12-small">
+												<input type="radio" id="demo-priority-normal" name="demo-priority">
+												<label for="demo-priority-normal">Paiement partiel</label>
+											</div>
+											<!-- Break 
+											<div class="col-12">
+												<textarea name="message_remboursement" id="message_remboursement" placeholder="Votre commentaire pour nous aider à mieux prendre en compte votre déclaration" rows="2"></textarea>
+											</div>
+											<!-- Break--> 
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer la déclaration" class="primary" /></li>
+													
+												</ul>
+											</div>
+										</div>
+									</form>
+								
+								<hr />
+								
+								<!-- Form -->
+						 <!--	<b><h2 id="cotisation">Déclaration de cotisation</h2></b>
+								<form method="post" action="#">
+										<div class="row gtr-uniform">
+											<!-- Break 
+											<div class="col-6 col-12-xsmall">
+												<ul class="actions">
+													<li>Joindre un justificatif (obligatoire): <a href="#" class="button icon solid fa-download">Icon</a></li>
+												</ul>
+											</div>
+											<div class="col-6 col-12-xsmall">Date de paiement cotisation:
+												<input type="date" name="date_cotisation" id="date_cotisation" value="" placeholder="" />
+											</div>
+											<!-- Break 
+											<div class="col-12">
+												<textarea name="message_cotisation" id="message_cotisation" placeholder="Votre commentaire pour nous aider à mieux prendre en compte votre déclaration" rows="2"></textarea>
+											</div>
+											<!-- Break 
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer la déclaration" class="primary" /></li>
+													
+												</ul>
+											</div>
+										</div>
+									</form>
+									
+									
+									<hr />
+								<!-- Form -->
+									<b><h2>Nous envoyer un email</h2></b>
+											<!-- Break-->
+											<!--
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">I am a human</label>
+											</div>-->
+											<!-- Break -->
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Saisissez votre messsage" rows="7"></textarea>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer email" class="primary" /></li>
+												</ul>
+											</div>
+								
+								<!-- Lists -->
+									<h3>Nous sommes dans les réseaux sociaux:</h3>
+									<div class="row">
+										
+										<div class="col-6 col-12-small">
+											Nous suivre sur facebook: 
+												<a href="#" class="icon brands fa-facebook-f"></a>
+										</div>
+									</div>
+								
+								
+							</div>
+									
+						</div>
+						<hr class="major" />
+					</div>
+			</section>
+
+		<!-- Scripts -->
+			<script src="asset{{('/js/jquery.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{'/js/jquery.dropotron.min.js'}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.scrollex.min.js')}}" type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+			<script src="asset{{('/js/browser.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/breakpoints.min.js')}}"></script>
+			<script src="asset{{('/js/util.js')}}"></script>
+			<script src="asset{{('/js/main.js')}}"></script>
+			
+			
+
+			
+			
+			
+
+	</body>
+  
+</html>

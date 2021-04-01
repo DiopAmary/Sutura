@@ -1,0 +1,48 @@
+{% extends 'Templateuseri.html.twig' %}
+{% block title %}Nouveau Cotisation {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    
+ <div class="jumbotron">
+ <h1  class = "card text-white bg-primary"> Liste des Cotisations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Montant</th>
+                <th>Periode</th>
+                <th>Date</th>
+                <th>Justificatif</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cotisation in cotisations %}
+            <tr>
+                <td>{{ cotisation.id }}</td>
+                <td>{{ cotisation.montant }}</td>
+                <td>{{ cotisation.periode }}</td>
+                <td>{{ cotisation.date ? cotisation.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ cotisation.justificatif }}</td>
+                <td>{{ cotisation.status }}</td>
+                <td>
+                    <a href="{{ path('cotisation_show', {'id': cotisation.id}) }}">show</a>
+                    <a href="{{ path('cotisation_edit', {'id': cotisation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+  
+	</div>
+	</div>
+{% endblock %}

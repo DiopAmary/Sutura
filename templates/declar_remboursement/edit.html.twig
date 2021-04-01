@@ -1,0 +1,16 @@
+{% extends 'Templateuseri.html.twig' %}
+
+{% block title %}Edit DeclarRemboursement{% endblock %}
+
+{% block body %}
+    <h1>Edit DeclarRemboursement</h1>
+
+    {{ include('declar_remboursement/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('declar_remboursement_index') }}">back to list</a>
+
+    {{ include('declar_remboursement/_delete_form.html.twig') }}
+{% endblock %}
+
+
+

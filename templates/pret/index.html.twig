@@ -1,0 +1,49 @@
+{% extends 'Templateuseri.html.twig' %}
+
+{% block title %}Pret index{% endblock %}
+
+{% block body %}
+    <h1>Pret index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Echeance</th>
+                <th>Periode</th>
+                <th>Montant</th>
+                <th>Type</th>
+                <th>Rib</th>
+                <th>Commentaire</th>
+                <th>Statut</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pret in prets %}
+            <tr>
+                <td>{{ pret.id }}</td>
+                <td>{{ pret.date ? pret.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ pret.echeance ? pret.echeance|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ pret.periode }}</td>
+                <td>{{ pret.montant }}</td>
+                <td>{{ pret.type }}</td>
+                <td>{{ pret.rib }}</td>
+                <td>{{ pret.commentaire }}</td>
+                <td>{{ pret.statut }}</td>
+                <td>
+                    <a href="{{ path('pret_show', {'id': pret.id}) }}">show</a>
+                    <a href="{{ path('pret_edit', {'id': pret.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+ 
+{% endblock %}

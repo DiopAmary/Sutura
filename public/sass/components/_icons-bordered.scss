@@ -1,0 +1,56 @@
+///
+/// Telemetry by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Icons (Bordered) */
+
+	ul.icons-bordered {
+		list-style: none;
+		margin-left: -1em;
+		margin-top: -1em;
+		padding-left: 0;
+
+		li {
+			display: inline-block;
+			padding: 1em 0 0 1em;
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			.icon {
+				@include vendor('transition', (
+					'background-color #{_duration(transition)} ease-in-out'
+				));
+				border-radius: _size(border-radius);
+				border-style: solid;
+				border-width: _size(border-width);
+				display: block;
+				font-size: 1.25em;
+				height: 2.25em;
+				line-height: 2.25em;
+				text-align: center;
+				width: 2.25em;
+			}
+		}
+	}
+
+	@mixin color-icons-bordered($p: null) {
+		ul.icons-bordered {
+			.icon {
+				border-color: _palette($p, fg);
+
+				&:hover {
+					background-color: _palette($p, border-bg);
+				}
+
+				&:active {
+					background-color: _palette($p, border2-bg);
+				}
+			}
+		}
+	}
+
+	@include color-icons-bordered;

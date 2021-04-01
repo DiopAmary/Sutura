@@ -1,0 +1,42 @@
+///
+/// Telemetry by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
+/* Contact Icons */
+
+	ul.contact-icons {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			margin-bottom: 1.5em;
+			min-height: 2.4em;
+			padding-left: 2.25em;
+
+			&:before {
+				font-size: 1.25em;
+				left: 0;
+				line-height: inherit;
+				position: absolute;
+				top: -0.1em;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		}
+	}
+
+	@mixin color-contact-icons($p: null) {
+		ul.contact-icons {
+			li {
+				&:before {
+					color: _palette($p, fg-bold);
+				}
+			}
+		}
+	}
+
+	@include color-contact-icons;

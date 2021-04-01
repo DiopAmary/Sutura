@@ -1,0 +1,45 @@
+{% extends 'Templateuseri.html.twig' %}
+
+{% block title %}DeclarRemboursement index{% endblock %}
+
+{% block body %}
+    <h1>DeclarRemboursement index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Montant</th>
+                <th>Date</th>
+                <th>Periode</th>
+                <th>Type</th>
+                <th>Justificatif</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for declar_remboursement in declar_remboursements %}
+            <tr>
+                <td>{{ declar_remboursement.id }}</td>
+                <td>{{ declar_remboursement.montant }}</td>
+                <td>{{ declar_remboursement.date ? declar_remboursement.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ declar_remboursement.periode }}</td>
+                <td>{{ declar_remboursement.type }}</td>
+                <td>{{ declar_remboursement.justificatif }}</td>
+                <td>{{ declar_remboursement.status }}</td>
+                <td>
+                    <a href="{{ path('declar_remboursement_show', {'id': declar_remboursement.id}) }}">show</a>
+                    <a href="{{ path('declar_remboursement_edit', {'id': declar_remboursement.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'Templateuseri.html.twig' %}
+
+{% block title %}Edit Cotisation{% endblock %}
+
+{% block body %}
+    <h1>Edit Cotisation</h1>
+
+    {{ include('cotisation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('cotisation_index') }}">back to list</a>
+    {{ include('cotisation/_delete_form.html.twig') }}
+{% endblock %}

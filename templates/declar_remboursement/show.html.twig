@@ -1,0 +1,46 @@
+{% extends 'Templateuseri.html.twig' %}
+
+{% block title %}DeclarRemboursement{% endblock %}
+
+{% block body %}
+    <h1>DeclarRemboursement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ declar_remboursement.id }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ declar_remboursement.montant }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ declar_remboursement.date ? declar_remboursement.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ declar_remboursement.periode }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ declar_remboursement.type }}</td>
+            </tr>
+            <tr>
+                <th>Justificatif</th>
+                <td>{{ declar_remboursement.justificatif }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ declar_remboursement.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('declar_remboursement_index') }}">back to list</a>
+
+    <a href="{{ path('declar_remboursement_edit',{'id': declar_remboursement.id}) }}">edit</a>
+
+    {{ include('declar_remboursement/_delete_form.html.twig') }}
+{% endblock %}

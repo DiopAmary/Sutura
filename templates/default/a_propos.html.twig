@@ -1,0 +1,131 @@
+
+{% block stylesheet %}
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>A propos</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+{% endblock %}
+
+
+{% block body %}
+       <!-- Header -->
+			<header id="header" class="alt" style = "background-color : #6eb792">
+				<!-- Logo -->
+					<div class="logo">
+						<a href="{{ path('default')}}">Sutura</a><span> Maroc</span>
+					</div>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ path('default')}}">Accueil</a></li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Utilisateur</a>
+								<ul>
+									<li><a href="{{ path('appregister')}}">S'inscrire</a></li>
+									<li><a href="{{ path('app_login')}}">Se connecter</a></li>
+								</ul>
+							</li>
+							{# <li>
+								<a href="#" class="icon solid fa-angle-down">Informations</a>
+								<ul>
+									<li><a href="#Partenaires">Nos partenaires</a></li>
+									<li><a href="#Statistiques">Statistiques </a></li>
+									<li><a href="#footer">Contact </a></li>
+								</ul>
+							</li> #}
+							<li><a href="{{ path('cgu')}}">Conditions d'utilisation</a></li>
+							<li><a href="{{ path('faire_don') }}">Faire un don</a></li>
+							<li><a href="{{ path('a_propos')}}">A Propos</a></li>
+						</ul>
+					</nav>
+			</header>
+            
+			
+			
+		<!-- Main -->
+			<section id="main" class="wrapper alt">
+				<div class="inner">
+					<header>
+							<h1>ASSOCIATION-START-UP: SUTURA</h1>
+							<p>A propos</p>
+						</header>
+					<hr class="major" />
+
+									<header>
+										<h2>Contexte</h2>
+									</header>
+									<p>L’accès aux soins au Maroc est très difficile pour les étudiants car le système de santé est très privatisé. Pour se soigner rapidement et dans de bonnes conditions il faut impérativement aller dans une clinique. Ce qui va sans dire qu’il faut débourser une somme importante. Ainsi cet état de fait rend davantage précaire la situation des étudiants étrangers.</p>
+									<header>
+										<h2>Problématique</h2>
+									</header>
+Chaque étudiant a une fois vécu un moment difficile. Soit c’est d’ordre financier soit  sanitaire et dans la plupart du temps les deux à la fois. Ce qui pourrait aider les étudiants est la mise en place d’une bonne assurance, leur permettant de pouvoir se soigner gratuitement  au moment du besoin. Certains étudiants en disposent par le biais de l’Agence Marocaine de Coopération Internationale. Ceux sont les boursiers officiels venant de différents Etats.<br>Toutefois le système de l’assurance n’est vraiment pas adapté à l’étudiant, il faut toujours payer la facture et courir derrière l’assureur pour se faire rembourser. Et c’est pour 2 à 4 mois, et dans la plupart des cas, l’étudiant ne reçoit rien en retour. Autre exemple, des étudiants ont des maux de dents, mais ne vont pas voir le dentiste car le budget nécessaire pour accéder au soin pose problème vu les charges ponctuelles qui les attendent (loyer, factures, nourriture, etc.). L’accès au soin pose alors de sérieux problèmes. Alors dites-nous comment pouvons-nous être performants dans nos études dans un environnement où l’accès aux soins pose problème? Pour nous étudiants, il est donc urgent de penser à combler ces carences du système de santé. A notre avis, le moyen le plus efficace pour s’y prendre est de mettre en place un modèle d’aide et de solidarité performant et adapté (à intégrer dans les associations d’étudiants).<br> Actuellement, les associations d’étudiants sont incapables d’accompagner leurs membres dans ces cas d’urgence, alors qu’elles devraient. De l’autre côté, certains étudiants sont victimes de chantages ou reçoivent des avis d’expulsion de la part de leurs bailleurs ou d'autres personnes pour cause de difficulté financière suite à un retard de la bourse (pour les boursiers) ou des parents étant en difficulté pour les soutenir.<i> <b>Demandons-nous combien d’étudiants ont abandonné leurs études parce qu’en un moment donné ils n’ont pas eu de soutien ? Combien d’étudiants ont des problèmes mais ne peuvent pas en parler à leur entourage ?</b></i><br>
+Dans cet ordre d’idée, vu le problème cerner il est important que nous puissions nous interroger sur le fait de savoir : <i> <b>quel modèle d’organisation informatisée et performante peut-on mettre en place aux seins des associations d’étudiants pour résoudre ces problèmes?</b></i><br><br>
+						<h2>La solution</h2>
+Une application web dénommée <b>“Sutura”</b> qui signifie en langue wolof <i><b>discrétion ou encore la dignité</b></i>, est née de ces différentes réflexions suite aux problèmes posés.  Son rôle est de prendre en charge, tous les problèmes évoqués précédemment. Face à tout cela il est donc important et aussi responsable pour nous de pouvoir chercher des solutions à nos problèmes. Sutura vient alors pour agir dans le présent et pour les générations futures. Beaucoup de chose se sont déroulées dans le passé mais beaucoup de choses encore peuvent changer dorénavant. Il est capital de prendre conscience en cela et Sutura rentre dans ce schéma de penser. Et comme son nom l’indique, Sutura veut régler ces problèmes dans la discrétion et surtout dans la dignité.<br>
+									
+									</div>
+									
+			</section>
+          
+
+            <footer id="footer">
+				<div class="inner">
+					<div class="split style1">
+						<div class="contact">
+							<h2>Contact</h2>
+							<ul class="contact-icons">
+								<li class="icon solid fa-home"><a href="#">Marrakech, Maroc<br>Marrakech, BP 40000</a></li>
+								<li class="icon solid fa-phone"><a href="#">0684363871</a></li>
+								<li class="icon solid fa-envelope"><a href="#">sutura@sutura.org</a></li>
+							</ul>
+							<ul class="icons-bordered">
+								<li><a class="icon brands fa-facebook-f" href="#">
+									<span class="label">Facebook</span>
+								</a></li>
+								{# <li><a class="icon brands fa-twitter" href="#">
+									<span class="label">Twitter</span>
+								</a></li>
+								<li><a class="icon brands fa-instagram" href="#">
+									<span class="label">Instagram</span>
+								</a></li>
+								<li><a class="icon brands fa-linkedin-in" href="#">
+									<span class="label">LinkedIn</span> #}
+								</a></li>
+							</ul>
+						</div>
+						<form action="#" method="post">
+							<h2>Envoyer un email</h2>
+							<div class="fields">
+								<div class="field half">
+									<input name="name" id="name" placeholder="Prénom & Nom" type="text" />
+								</div>
+								<div class="field half">
+									<input name="email" id="email" placeholder="Email" type="email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input value="Envoyer" class="button" type="submit" /></li>
+							</ul>
+						</form>
+					</div>
+					<div class="copyright">
+						<p>&copy; Sutura@2020. All rights reserved.</p>
+					</div>
+				</div>
+			</footer>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{asset('/js/jquery.min.js')}}"   type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.dropotron.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.scrollex.min.js')}}"  type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/browser.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/breakpoints.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/util.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/main.js')}}" type="text/javascript"></script>
+{% endblock %}

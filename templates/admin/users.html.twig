@@ -1,0 +1,39 @@
+{% extends 'Templateuseri.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+<h1> liste des utilisateurs </h1>
+<table class="table">
+<thead>
+     <th> ID  </th>
+     <th> Email </th>
+     <th> Rôle </th>
+    
+     <th> Actions </th>
+  </thead>
+<tbody>
+{% for   user in  users  %}
+
+<tr>
+<td> {{ user.id }}</td>
+<td> {{ user.email }} </td>
+<td>
+{% for role in user.roles %}
+   {% if role == "ROLE_USER" %}
+         Utilisateur
+    {% elseif role == "ROLE_ADMIN" %}
+	Administrateur
+	{% elseif role == "ROLE_ETUDIANT" %}
+	    Etudiant
+	{% endif %}
+{% endfor %}
+ </td>
+<td><a href="{{ path('modifieruser',{'id': user.id })}}" class="#" >Modifier</a></td>
+</tr>
+{% else %}
+
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,73 @@
+{# {% extends 'Templateuseri.html.twig' %} #}
+{# {% extends 'templatepourforme.html.twig' %}
+
+{% block title %}Déclaration de remboursement{% endblock %}
+
+{% block body %} #}
+<!DOCTYPE html>
+<html>
+   <head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+      <link href="https://bootswatch.com/4/flatly/bootstrap.min.css"  type="text/css" rel="stylesheet">
+		<link href="https://bootswatch.com/bootstrap.css" rel="stylesheet" type="text/css">
+      <title>Déclaration de remboursement</title>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<div class="logo">
+						<a href="">Sutura</a><span>Maroc</span>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+						</ul>
+					</nav>
+
+			</header>
+            <!-- Main -->
+            <div class="ratings">
+               <div class = "container">
+                  <div class = "container">
+                     <div class = "container">
+                        <div class = "container">
+                           <div class = "container">
+                              <div class = "container">
+                                 <div class = "container">
+                                    <div class = "container" style="margin-top:100px">
+                                       <h1  class="alert alert-dismissible alert-success" style="background-color:#70c097; text-align:center">Declarer un Remboursement</h1>
+                                       {{ include('cotisation/_form.html.twig') }}
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         
+
+      	{# 	<!-- Scripts -->
+			<script src="asset{{('/js/jquery.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{'/js/jquery.dropotron.min.js'}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.scrollex.min.js')}}" type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+			<script src="asset{{('/js/browser.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/breakpoints.min.js')}}"></script>
+			<script src="asset{{('/js/util.js')}}"></script>
+			<script src="asset{{('/js/main.js')}}"></script> #}
+   </body>
+</html>   
+{# {% endblock %} #}
+
+
+

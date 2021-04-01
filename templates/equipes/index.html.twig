@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipes index{% endblock %}
+
+{% block body %}
+    <h1>Equipes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prenom</th>
+                <th>Nom</th>
+                <th>Sexe</th>
+                <th>PaysOrigine</th>
+                <th>Email</th>
+                <th>NombreAnneeMaroc</th>
+                <th>NumeroTelephone</th>
+                <th>Poste</th>
+                <th>Photo</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for equipe in equipes %}
+            <tr>
+                <td>{{ equipe.id }}</td>
+                <td>{{ equipe.prenom }}</td>
+                <td>{{ equipe.nom }}</td>
+                <td>{{ equipe.Sexe }}</td>
+                <td>{{ equipe.paysOrigine }}</td>
+                <td>{{ equipe.email }}</td>
+                <td>{{ equipe.nombreAnneeMaroc }}</td>
+                <td>{{ equipe.numeroTelephone }}</td>
+                <td>{{ equipe.poste }}</td>
+                <td>{{ equipe.photo }}</td>
+                <td>{{ equipe.description }}</td>
+                <td>
+                    <a href="{{ path('equipes_show', {'id': equipe.id}) }}">show</a>
+                    <a href="{{ path('equipes_edit', {'id': equipe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('equipes_new') }}">Create new</a>
+{% endblock %}

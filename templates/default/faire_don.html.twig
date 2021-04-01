@@ -1,0 +1,137 @@
+
+{% block stylesheet %}
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Faire un don</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+{% endblock %}
+
+
+
+    <body class="is-preload">
+        <!-- Header -->
+			<header id="header" class="alt" style = "background-color : #6eb792">
+				<!-- Logo -->
+					<div class="logo">
+						<a href="{{ path('default')}}">Sutura</a><span> Maroc</span>
+					</div>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ path('default')}}">Accueil</a></li>
+							<li>
+								<a href="" class="icon solid fa-angle-down">Utilisateur</a>
+								<ul>
+									<li><a href="{{ path('appregister')}}">S'inscrire</a></li>
+									<li><a href="{{ path('app_login')}}">Se connecter</a></li>
+								</ul>
+							</li>
+							{# <li>
+								<a href="" class="icon solid fa-angle-down">Informations</a>
+								<ul>
+									<li><a href="#Partenaires">Nos partenaires</a></li>
+									<li><a href="#Statistiques">Statistiques </a></li>
+									<li><a href="#footer">Contact </a></li>
+								</ul>
+							</li> #}
+							<li><a href="{{ path('cgu')}}">Conditions d'utilisation</a></li>
+							<li><a href="{{ path('faire_don') }}">Faire un don</a></li>
+							<li><a href="{{ path('a_propos')}}">A Propos</a></li>
+						</ul>
+					</nav>
+			</header>
+            
+          <!-- Main -->
+			<section id="main" class="wrapper alt">
+				<div class="inner">
+					<header>
+							<h1>ASSOCIATION-START-UP: SUTURA</h1>
+							<p>Faire un don</p>
+						</header>
+					<hr class="major" />
+					<!-- Blockquote -->
+									<h3>Comment nous soutenir ?</h3>
+									<blockquote>Pour l'instan
+									t, vous pouvez nous soutenir en faisant un dépôt bancaire. D'ici un futur proche, la possibilité de faire un don en ligne.</blockquote>
+					<table>
+						<thead>
+							<tr>
+								<th><h1><b>Relevé d'identité bancaire:</b></h1></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><b>145-------450--------21111--------07796800014</b></td>
+							</tr>
+						</tbody>
+					</table>
+
+									
+									</div>
+									
+			</section>
+
+
+            <footer id="footer">
+				<div class="inner">
+					<div class="split style1">
+						<div class="contact">
+							<h2>Contact</h2>
+							<ul class="contact-icons">
+								<li class="icon solid fa-home"><a href="#">Marrakech, Maroc<br>Marrakech, BP 40000</a></li>
+								<li class="icon solid fa-phone"><a href="#">0684363871</a></li>
+								<li class="icon solid fa-envelope"><a href="#">sutura@sutura.org</a></li>
+							</ul>
+							<ul class="icons-bordered">
+								<li><a class="icon brands fa-facebook-f" href="#">
+									<span class="label">Facebook</span>
+								</a></li>
+								{# <li><a class="icon brands fa-twitter" href="#">
+									<span class="label">Twitter</span>
+								</a></li>
+								<li><a class="icon brands fa-instagram" href="#">
+									<span class="label">Instagram</span>
+								</a></li>
+								<li><a class="icon brands fa-linkedin-in" href="#">
+									<span class="label">LinkedIn</span> #}
+								</a></li>
+							</ul>
+						</div>
+						<form action="#" method="post">
+							<h2>Envoyer un email</h2>
+							<div class="fields">
+								<div class="field half">
+									<input name="name" id="name" placeholder="Prénom & Nom" type="text" />
+								</div>
+								<div class="field half">
+									<input name="email" id="email" placeholder="Email" type="email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input value="Envoyer" class="button" type="submit" /></li>
+							</ul>
+						</form>
+					</div>
+					<div class="copyright">
+						<p>&copy; Sutura@2020. All rights reserved.</p>
+					</div>
+				</div>
+			</footer>
+     </body>   
+{% block body %}
+{% endblock %}
+
+{% block javascript %}
+    <script src="{{asset('/js/jquery.min.js')}}"   type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.dropotron.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.scrollex.min.js')}}"  type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+    <script src="{{asset('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/browser.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/breakpoints.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/util.js')}}" type="text/javascript"></script>
+    <script src="{{asset('/js/main.js')}}" type="text/javascript"></script>
+{% endblock %}

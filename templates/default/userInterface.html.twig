@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{etudiant.nom }} {{ etudiant.prenom }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{# <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" /> #}
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+
+				<!-- Logo -->
+					<div class="logo">
+						<a href="">Sutura</a><span>Maroc</span>
+					</div>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+						</ul>
+					</nav>
+
+			</header>
+
+		<!-- Main -->
+			<section id="main" class="wrapper alt">
+				<div class="inner">
+
+					<!-- Content -->
+						<header>
+							<b><h2>Bienvenue!</h2></b>
+							<h2>{{etudiant.nom }}  {{ etudiant.prenom }}</h2>
+						</header>
+					{# <!-- Image -->
+							<h3>Image de solidarité</h3>
+							<span class="image fit"><img src="FstSettat.jpg" alt="" /></span> #}
+
+					<hr class="major" />
+					<!-- Elements -->
+					
+						<div class="row gtr-200">
+							<div class="col-6 col-12-medium">
+								<div class="split">
+									<section>
+										<div class="ratings">
+											<article>
+												<b><h2>Etat de la caisse</h2></b>
+												<p>En temps réel</p>
+											<!-- mettre une variable qui contient l'état de la caisse en pourcentage -->
+										
+													<div class="progress" data-progress="45">45%</div>
+												
+											</article>
+										</div>
+									</section>
+								</div>
+								<b><h2>Tableau de bord</h2></b>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Eléments</th>
+													<th>Valeurs</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Cotisation:</td>
+													<td>100</td>
+													<td>MAD</td>
+												</tr>
+												<tr>
+													<td>Expire le:</td>
+													<td>31/12/2021</td>
+												</tr>
+												<tr>
+												  {% set var = 0 %}
+                 {% for a in prets %}
+                  {% if a.statut =="accorder" %}
+				  
+          {% set var = var +1 %}
+              {% endif %}
+               {% endfor %}
+													<td>Nombre de prêts</td>
+													<td> {{ var }}</td>
+												</tr>
+												<tr>
+												{% set vari = 0 %}
+												   {% for b in declarations %}
+               
+                     {% set vari= vari +1 %}
+                       {% endfor %}
+													<td>Nombre de remboursements</td>
+													<td>{{ vari }}</td>
+												</tr>
+												<tr>
+													<td>Echéance(prêt)</td>
+													<td>échéance</td>
+												</tr>
+												<tr>
+																				  {% set varia = 0 %}
+                 {% for a in prets %}
+                  {% if a.statut =="non traité" %}
+
+          {% set varia = varia +1 %}
+              {% endif %}
+               {% endfor %}
+													<td>Demande en cours de traitement</td>
+											<td> {% if varia==0 %} Neant {% else %} Votre demande de pret est en Cours {% endif %}</td>
+												</tr>
+												<tr>
+													<td>Montant dû:</td>
+													<td>valeur_montant_prêt</td>
+													<td>MAD</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="1"></td>
+													<td>Dernière mise à jour: 27/02/2021</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+									<!-- Form -->
+                       {%  set moi=2065 %}
+                       {% set moi=moi + etudiant.id %}
+								{% if varia != 0 %}
+									<b><a href="{{path('pret_new',{'id':etudiant.id,'connexion':moi})}}"><h2 id="Demande_pret"> <input type= "button" class="primary" value=" Demander un  prêt"></a></h2></b>
+									<hr />
+								{% else %}
+									<b><a href="#"><h2 id="Demande_pret"> <input type= "button" class="primary" value=" Demander un  prêt"></a></h2></b>
+									<hr/>
+								{% endif %}
+									</div>
+							  <div id="message" class="col-6 col-12-medium">
+								<!-- Blockquote -->
+									<b><h2>Dernier message</h2></b>
+									<blockquote>Madame/monsieur merci de l'intérêt que vous portez à cette mutuelle qui assure la solidarité, l'engagement et la proximité. Sutura permet d'assister les étudiants en cas de besoin ponctuel éventuel. On peut essayer de faire un chatbot qui sera plus simple.</blockquote>
+							     {% if varia != 0 %}
+                              <b><h2 id="remboursement"><a href="{{path('declar_remboursement_new',{'id':etudiant.id,'connexion':moi})}}"><input type= "button" class="primary" value="Déclaration de remboursement "></a></h2></b>
+							  {% else %}
+							  <b><h2 id="remboursement"><a href="#"><input type= "button" class="primary" value="Déclaration de remboursement "></a></h2></b>
+							  {% endif %}
+					
+								<hr/>
+								<!-- Form -->
+									
+								<b><h2 id="cotisation"><a href="{{ path('cotisation_new', {'id': etudiant.id,'connexion':moi})}}"> <input type= "button" class="primary" value="Déclaration de cotisation"></a></h2></b>	
+									<hr />
+								<!-- Form -->
+									<b><h2>Nous envoyer un email</h2></b>
+											<!-- Break-->
+											<!--
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="col-6 col-12-small">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">I am a human</label>
+											</div>-->
+											<!-- Break -->
+											<div class="col-12">
+												<textarea name="demo-message" id="demo-message" placeholder="Saisissez votre messsage" rows="7"></textarea>
+											</div>
+											<!-- Break -->
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Envoyer email" class="primary" /></li>
+												</ul>
+											</div>
+								
+								<!-- Lists -->
+									<h3>Nous sommes dans les réseaux sociaux:</h3>
+									<div class="row">
+										
+										<ul class="icons-bordered">
+											<li><a class="icon brands fa-facebook-f" href="#">
+												<span class="label">Facebook</span>
+											</a></li>
+											{# <li><a class="icon brands fa-twitter" href="#">
+												<span class="label">Twitter</span>
+											</a></li>
+											<li><a class="icon brands fa-instagram" href="#">
+												<span class="label">Instagram</span>
+											</a></li>
+											<li><a class="icon brands fa-linkedin-in" href="#">
+												<span class="label">LinkedIn</span>
+											</a></li> #}
+										</ul>
+									</div>
+								
+								
+							</div>
+									
+						</div>
+						<hr class="major" />
+					</div>
+			</section>
+
+		<!-- Scripts -->
+		{# 	<script src="asset{{('/js/jquery.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{'/js/jquery.dropotron.min.js'}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.scrollex.min.js')}}" type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+			<script src="asset{{('/js/browser.min.js')}}"  type="text/javascript"></script>
+			<script src="asset{{('/js/breakpoints.min.js')}}"></script>
+			<script src="asset{{('/js/util.js')}}"></script>
+			<script src="asset{{('/js/main.js')}}"></script> #}
+			
+			
+
+			
+			
+			
+
+	</body>
+  
+</html>

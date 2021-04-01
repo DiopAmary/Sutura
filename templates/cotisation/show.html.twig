@@ -1,0 +1,42 @@
+{% extends 'Templateuseri.html.html.twig' %}
+
+{% block title %}Cotisation{% endblock %}
+
+{% block body %}
+    <h1>Cotisation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cotisation.id }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ cotisation.montant }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ cotisation.periode }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ cotisation.date ? cotisation.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Justificatif</th>
+                <td>{{ cotisation.justificatif }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ cotisation.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cotisation_index') }}">back to list</a>
+
+    <a href="{{ path('cotisation_edit', {'id': cotisation.id}) }}">edit</a>
+
+    {{ include('cotisation/_delete_form.html.twig') }}
+{% endblock %}

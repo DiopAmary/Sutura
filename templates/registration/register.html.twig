@@ -1,0 +1,43 @@
+{% extends 'aicha.html.twig' %}
+{% block title %}Register{% endblock %}
+{% block body %}
+
+<div class="container">   
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">   
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">  
+   {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+    <h1 class="alert alert-dismissible alert-success">Merci de Bien Vouloir Vous Inscrire </h1>
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        })}}
+            {{ form_widget(form2) }}
+ 																	
+	  <h6 class="text-danger">(Accepter les termes d'utilisation )</h6>
+	  {{form_row(registrationForm.agreeTerms)}}
+   
+	<br> 
+	<button type="submit" class="alert alert-dismissible alert-success"> S'inscrire  </button>
+	{{ form_end(registrationForm) }}
+	
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+{% endblock %}

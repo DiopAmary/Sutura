@@ -1,0 +1,54 @@
+{% extends 'Templateuseri.html.html.twig' %}
+
+{% block title %}Pret{% endblock %}
+
+{% block body %}
+    <h1>Pret</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pret.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ pret.date ? pret.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Echeance</th>
+                <td>{{ pret.echeance ? pret.echeance|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ pret.periode }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ pret.montant }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ pret.type }}</td>
+            </tr>
+            <tr>
+                <th>Rib</th>
+                <td>{{ pret.rib }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ pret.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ pret.statut }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pret_index') }}">back to list</a>
+
+    <a href="{{ path('pret_edit', {'id': pret.id}) }}">edit</a>
+
+    {{ include('pret/_delete_form.html.twig') }}
+{% endblock %}

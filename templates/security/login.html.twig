@@ -1,0 +1,104 @@
+{% extends 'aicha.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+
+
+<div class="container">   
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">   
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">
+
+
+<div class="container">   
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">   
+<div class="container">  
+<div class="container">  
+<div class="container">  
+<div class="container">
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+		
+    {% endif %}
+
+    <h1 class="alert alert-dismissible alert-success"> Se connecter </h1>
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" required>
+	  
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}
+	<br>
+	   <div class="checkbox mb-3">
+            <label>
+             <a href="{{path('appregister')}}">  Veuillez Cliquer ici si Vous n'avez pas de compte   </a>
+            </label>
+        </div>
+  <br>   
+    <button class="table-success" type="submit">
+        Se Connecter 
+		
+    </button>
+</form>
+
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Etudiant{% endblock %}
+
+{% block body %}
+    <h1>Etudiant</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etudiant.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ etudiant.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ etudiant.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ etudiant.sexe }}</td>
+            </tr>
+            <tr>
+                <th>PaysOrigine</th>
+                <td>{{ etudiant.paysOrigine }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ etudiant.email }}</td>
+            </tr>
+            <tr>
+                <th>NombreAnneeMaroc</th>
+                <td>{{ etudiant.nombreAnneeMaroc }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ etudiant.date ? etudiant.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>NumTelephone</th>
+                <td>{{ etudiant.numTelephone }}</td>
+            </tr>
+            <tr>
+                <th>VilleEtude</th>
+                <td>{{ etudiant.villeEtude }}</td>
+            </tr>
+            <tr>
+                <th>Etablissement</th>
+                <td>{{ etudiant.Etablissement }}</td>
+            </tr>
+            <tr>
+                <th>Filiere</th>
+                <td>{{ etudiant.Filiere }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('etudiant_index') }}">back to list</a>
+
+    <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+
+    {{ include('etudiant/_delete_form.html.twig') }}
+{% endblock %}

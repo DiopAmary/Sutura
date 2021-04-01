@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>Sutura</title>
+		<link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+	<body class="is-preload">
+		<!-- Header -->
+			<header id="header" class="alt">
+				<!-- Logo -->
+					<div class="logo">
+						<a href="{{ path('default')}}">Sutura</a><span> Maroc</span>
+					</div>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="{{ path('default')}}">Accueil</a></li>
+							<li>
+								<a href="" class="icon solid fa-angle-down">Actions</a>
+								<ul>
+									<li><a href="{{ path('appregister')}}">S'inscrire</a></li>
+									<li><a href="{{ path('app_login')}}">Se connecter</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="" class="icon solid fa-angle-down">Informations</a>
+								<ul>
+									<li><a href="#Partenaires">Nos partenaires</a></li>
+									<li><a href="#Statistiques">Statistiques </a></li>
+									<li><a href="#footer">Contact </a></li>
+								</ul>
+							</li>
+							<li><a href="{{ path('cgu')}}">Conditions d'utilisation</a></li>
+							<li><a href="{{ path('faire_don') }}">Faire un don</a></li>
+							<li><a href="{{ path('a_propos')}}">A Propos</a></li>
+						</ul>
+					</nav>
+			</header>
+		<!-- Banner -->
+			<section id="banner">
+				<div class="inner">
+					{# <span class="icon solid fa-laptop"></span>  #}
+					<img src"images/logo/Petit.png"></img>
+					<h1>Sutura, un ubuntu!</h1>
+					<ul class="actions special">
+						<li><a href="#two" class="button wide scrolly">Commencer la visite</a></li>
+					</ul>
+				</div>
+			</section>
+		<!-- Two -->
+			<section id="two" class="wrapper style1 special">
+				
+					<div><h1>Sutura en chiffres</h1></div>
+					<div class="inner">
+						<div class="stats">
+							<article>
+								<h3><span>128</span> Membres</h3>
+								{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+							</article>
+							<article>
+								<h3><span>10</span> Nationalités</h3>
+								{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+							</article>
+							<article>
+								<h3><span>39</span> Opérations</h3>
+								{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+							</article>
+							<article>
+								<h3><span>1</span> Période</h3>
+								{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+							</article>
+						</div>
+					</div>
+				
+			</section>
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="inner">
+				<div><h1>Nos services</h1></div>
+					<ul class="tabs">
+						<li>
+							<h3>SOS Santé</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>C'est la première priorité</h2>
+									<p>Les membres ayant finalisé leur inscription peuvent faire des demandes de prêts pour des soins de santé lorsqu'ils éprouvent le besoin au niveau de l'espace utilisateur. Ils auront un délai pour rembourser intégralement la somme empruntée. Cette dernière servira à satisfaire d'éventuelles demandes d'étudiants dans le cas de besoin.</p>
+									<!--<ul class="actions">
+										<li><a href="#" class="button">Learn More</a></li>
+									</ul>-->
+								</div>
+								<div class="image"><img src="images/sos_sante.jpg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>Autres urgences</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Nous sommes aussi sensibles aux urgences</h2>
+									<p>Même si la priorité est de satisfaire d'abord les besoins, nous nous efforçons de satisfaire certains cas urgents de demandes. Mais c'est toujours selon l'état de la caisse et de la crédibilité du demandeur.</p>
+									<!--<ul class="actions">
+										<li><a href="#" class="button">Learn More</a></li>
+									</ul>-->
+								</div>
+								<div class="image"><img src="images/urgences.png" alt="" /></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		<!-- Four -->
+			<section id="four" class="quotes">
+				<article class="icon solid fa-quote-left">
+					<span class="image"><img src="images/pic03.jpg" alt="" data-position="center" /></span>
+					<h2>"Ce programme m'a vraiment sorti d'une situation de maladie"</h2>
+					{# <div class="author">
+						<span class="name">Ambroise</span>
+						<span class="title">Etudiant sénégalais</span>
+					</div> #}
+				</article>
+				<article class="icon solid fa-quote-left">
+					<span class="image"><img src="images/pic04.jpg" alt="" data-position="left" /></span>
+					<h2>"J'ai pu régler une situation urgente grâce à ce programme"</h2>
+					{# <div class="author">
+						<span class="name">Mouhamed</span>
+						<span class="title">Etudiant malien</span>
+					</div> #}
+				</article>
+			</section>
+				{# <div class="inner">
+					<ul class="actions special">
+						<li><a href="##" class="button wide scrolly">Voir + de témoignages</a></li>
+					</ul>
+				</div> #}
+		<!-- Five -->
+			<div style = "width : 70%; margin : 0 auto">
+				<section id="Statistiques" class="wrapper">
+				<div class="inner">
+					<h1>Statistiques en temps réel</h1>
+					<div class="split">
+						<section>
+							<div class="ratings">
+								<article>
+									<h3>Adhérents</h3>
+									<div class="progress" data-progress="20">20%</div>
+								</article>
+								<article>
+									<h3>Nationalités présentes</h3>
+									<div class="progress" data-progress="80">80%</div>
+								</article>
+								<article>
+									<h3>Opérations par rapport à la période précèdente</h3>
+									<div class="progress" data-progress="100">100%</div>
+								</article>
+							</div>
+						</section>
+						<section>
+							<div class="ratings">
+								<article>
+									<h3>Crédits non encore payés</h3>
+									<div class="progress" data-progress="45">45%</div>
+								</article>
+								<article>
+									<h3>Remboursements</h3>
+									<div class="progress" data-progress="85">85%</div>
+								</article>
+								<article>
+									<h3>Capacité de réponses</h3>
+									<div class="progress" data-progress="60">60%</div>
+								</article>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
+			</div>
+		
+		<section id="Partenaires">
+		<div style = "width : 70%; margin : 0 auto">
+			<h1>Nos partenaires</h1>
+			<div  class="box alt">
+				<div class="row gtr-50 gtr-uniform">
+					<div class="col-4"><span class="image fit"><img src="images/ram.png" alt="" style = "width : 150px; height : auto; margin : 0 auto;" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/attijari.png" alt="" style = "width : 150px; height : auto; margin : 0 auto;" /></span></div>
+					<div class="col-4"><span class="image fit"><img src="images/orange.png" alt="" style = "width : 150px; height : auto; margin : 0 auto;" /></span></div>
+				</div>
+			</div>
+		</div>
+		</section>
+		
+		
+		
+		<!-- Two -->
+			<section id="twos" class="wrapper style1 special">
+				<div><h1>Nos objectifs</h1></div>
+				<div class="inner">
+					<div class="stats">
+						<article>
+							<h3><span>+15.000</span>  Etudiants étrangers au Maroc</h3>
+							<p>Arriver à une participation massive </p>
+						</article>
+						<article>
+							<h3><span>+8.000</span> Etudians dans les établissements publics</h3>
+							{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+						</article>
+						<article>
+							<h3><span>+7.000</span> Etudiants dans le privée</h3>
+							{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+						</article>
+						<article>
+							<h3><span>5 </span> Années pour arriver à une large couverture</h3>
+							{# <p>Lorem ipsum dolor nulla feugiat adipiscing.</p> #}
+						</article>
+					</div>
+				</div>
+			</section>
+		
+		<!-- Three -->
+			<section id="threes" class="wrapper">
+				<div class="inner">
+				<div><h1>L'équipe initiatrice</h1></div>
+					<ul class="tabs">
+						<li>
+							<h3>1</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Ambroise Ngagne TINE, étudiant sénégalais à l'ENSA de Marrakech</h2>
+									<p>Détenteur d'un Diplôme Supérieur d'Entrepreneur Manager spécialité informatique de l'Etat du Sénégal, est actuellement en formation pour un diplôme d'ingénieur. De plus, membre actif de l'UGESM et de la CESAM section Marrakech avec le poste chargé académique et social.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/ambroise.jpeg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>2</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Ousmane FAYE, doctorant en sciences politiques</h2>
+									<p>Jeune activiste panafricain engagé au Maroc, il est le Président de l'ONG African Citizens Association. Membre actif de la CESAM depuis 2014, il est le conseiller du bureau exécutif de la CESAM Settat et fut Secrétaire Général de l'UGESM Séttat en 2015.
+									Economiste de formation, il est titulaire d'un master en Géopolitique et Relations Internationales à l'Université Cadi AYYAD de Marrakech et actuellement doctorant en Sciences Poliques. Il est aussi enseignat à l'Université Privée de Marrakech.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/ousmane_faye.png" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>3</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
+									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/sangareimg.jpg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>4</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Aicha Mahamane Souley , Etudiante en Data and Software Engineer </h2>
+									<p>Etudiante très brillante en Data and Software Engineer à L'INSEA  Aicha Mahamane Souley  commence son parcours universitaire au maroc ou elle obtient son diplôme du DEUG à la Fst de Marrakech  
+								        Elle poursuit actuellement ses études à l'INSEA.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/Aichaimg.jpeg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>5</h3>
+							<div class="split reversed">
+								<div class="content" style ="width : 90%">
+									<h2>Diop Amary<br/>Eléve ingénieur en Big Data et Cloud Computing</h2>
+									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/diopAmary.jpg" alt="" style = "width : 350px; height :auto;" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>6</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
+									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>7</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
+									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>8</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
+									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
+							</div>
+						</li>
+						<li>
+							<h3>9</h3>
+							<div class="split reversed">
+								<div class="content">
+									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
+									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Linkedin</a></li>
+									</ul>
+								</div>
+								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<div class="split style1">
+						<div class="contact">
+							<h2>Contact</h2>
+							<ul class="contact-icons">
+								<li class="icon solid fa-home"><a href="#">Marrakech, Maroc<br>Marrakech, BP 40000</a></li>
+								<li class="icon solid fa-phone"><a href="#">0684363871</a></li>
+								<li class="icon solid fa-envelope"><a href="#">sutura@sutura.org</a></li>
+							</ul>
+							<ul class="icons-bordered">
+								<li><a class="icon brands fa-facebook-f" href="#">
+									<span class="label">Facebook</span>
+								</a></li>
+								{# <li><a class="icon brands fa-twitter" href="#">
+									<span class="label">Twitter</span>
+								</a></li>
+								<li><a class="icon brands fa-instagram" href="#">
+									<span class="label">Instagram</span>
+								</a></li>
+								<li><a class="icon brands fa-linkedin-in" href="#">
+									<span class="label">LinkedIn</span>
+								</a></li> #}
+							</ul>
+						</div>
+						<form action="#" method="post">
+							<h2>Envoyer un email</h2>
+							<div class="fields">
+								<div class="field half">
+									<input name="name" id="name" placeholder="Prénom & Nom" type="text" />
+								</div>
+								<div class="field half">
+									<input name="email" id="email" placeholder="Email" type="email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input value="Envoyer" class="button" type="submit" /></li>
+							</ul>
+						</form>
+					</div>
+					<div class="copyright">
+						<p>&copy; Sutura@2020. All rights reserved.</p>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+		
+		
+		
+		
+	
+
+			
+	
+	
+	
+	
+	
+        {% block body %}{% endblock %}
+		{% block javascript %}
+			<script src="{{asset('/js/jquery.min.js')}}"   type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.dropotron.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.scrollex.min.js')}}"  type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/browser.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/breakpoints.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/util.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/main.js')}}" type="text/javascript"></script>
+		{% endblock %}
+    </body>
+</html>
