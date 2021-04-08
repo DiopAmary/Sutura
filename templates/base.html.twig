@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html>
+{# <html>
     <head>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<title>Sutura</title>
-		<link rel="stylesheet" href="assets/css/main.css" />
-    </head>
+		<link rel="stylesheet" href="css/main.css" />
+    </head> #}
+<html prefix="og: http://ogp.me/ns#" lang="fr">
+<head>
+<title>Sutura</title>
+<meta property="og:title" content="Sutura, association, startup, entrepreneuriat social." />
+<meta property="og:type" content="Solidarité entre étudiants étrangers au Maroc." />
+<meta property="og:image" content="images/logo.jpeg" />
+<meta property="og:url" content="https://sutura.in/" />
+<meta charset="UTF-8" />
+<link rel="icon" type="image/jpeg" href="images/logo.jpeg" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="css/main.css" />
+<meta NAME="SUTURA" CONTENT="Bienvenue dans le site officiel de sutura, une startup sociale destinée aux étudiants au Maroc.">
+<meta HTTP-EQUIV="SUTURA" CONTENT="Cette application web a pour but de faciliter le rapport entre la structure sutura et les étudiants.">
+<meta name="author" content="ambroise ngagne tine,amary diop,ibrahima coulibaly, mohamadou sangaré, maman aicha souley nana">
+<meta name="categorie" content="Etudes, Solidarité, étudiants étrangers">
+<meta name="copyright" content="ambou, amary diop,ibrahima coulibaly, mohamadou sangaré, maman aicha souley nana">
+<meta name="language" content="fr">
+<meta name="description" content="Bienvenue dans l'application web de sutura. A travers ce portail, vous pouvez avoir toutes les informations nous concernant.'">
+<meta name="keywords" content="entrepreneuriat, social, étudiants, études, maroc, étrangers, mutuelle">
+<meta name="Publisher" content="ambou">
+<meta name="Peply-to" content="ambroise.tine@gmail.com">
+<meta name="Googlebot" content="noarchive">
+<meta name="Robots" content="all">
+</head>
 	<body class="is-preload">
 		<!-- Header -->
-			<header id="header" class="alt">
+			<header id="header" class="alt" style="background-color:#6eb792">
 				<!-- Logo -->
 					<div class="logo">
 						<a href="{{ path('default')}}">Sutura</a><span> Maroc</span>
@@ -40,9 +65,9 @@
 			</header>
 		<!-- Banner -->
 			<section id="banner">
-				<div class="inner">
+				<div class="inner container mt-5">
 					{# <span class="icon solid fa-laptop"></span>  #}
-					<img src"images/logo/Petit.png"></img>
+					<img src="images/logo/Petit.png" alt="Logo" style="width:100%"/>
 					<h1>Sutura, un ubuntu!</h1>
 					<ul class="actions special">
 						<li><a href="#two" class="button wide scrolly">Commencer la visite</a></li>
@@ -177,13 +202,15 @@
 			</div>
 		
 		<section id="Partenaires">
-		<div style = "width : 70%; margin : 0 auto">
+		<div style = "width : 90%; margin : 0 auto">
 			<h1>Nos partenaires</h1>
-			<div  class="box alt">
-				<div class="row gtr-50 gtr-uniform">
-					<div class="col-4"><span class="image fit"><img src="images/ram.png" alt="" style = "width : 150px; height : auto; margin : 0 auto;" /></span></div>
-					<div class="col-4"><span class="image fit"><img src="images/attijari.png" alt="" style = "width : 150px; height : auto; margin : 0 auto;" /></span></div>
-					<div class="col-4"><span class="image fit"><img src="images/orange.png" alt="" style = "width : 150px; height : auto; margin : 0 auto;" /></span></div>
+			<div  class="box alt" style = "width : 90%; margin : 0 auto">
+				<div class="row ">
+				{# // refaire avec bootstrapp en fonction taille ecrant et refaire page se connecter et les parties des autre collab #}
+					<div class="col-ms-12 col-md-3 col-lg-3" style = "margin : 0 auto"><span class="image fit"><img src="images/ram.png" alt=""/></span></div>
+					<div class="col-ms-12 col-md-3 col-lg-3" style = "margin : 0 auto"><span class="image fit"><img src="images/attijari.png" alt="" /></span></div>
+					<div class="col-ms-12 col-md-3 col-lg-3" style = "margin : 0 auto"><span class="image fit"><img src="images/orange.png" alt=""/></span></div>
+					<div class="col-ms-12 col-md-3 col-lg-3" style = "margin : 0 auto"><span class="image fit"><img src="images/ocp.png" alt="" /></span></div>
 				</div>
 			</div>
 		</div>
@@ -228,7 +255,7 @@
 									<h2>Ambroise Ngagne TINE, étudiant sénégalais à l'ENSA de Marrakech</h2>
 									<p>Détenteur d'un Diplôme Supérieur d'Entrepreneur Manager spécialité informatique de l'Etat du Sénégal, est actuellement en formation pour un diplôme d'ingénieur. De plus, membre actif de l'UGESM et de la CESAM section Marrakech avec le poste chargé académique et social.</p>
 									<ul class="actions">
-										<li><a href="#" class="button">Linkedin</a></li>
+										<li><a href="https://www.linkedin.com/in/ambroise-ngagne-tine-459969185/" class="button">Linkedin</a></li>
 									</ul>
 								</div>
 								<div class="image"><img src="images/ambroise.jpeg" alt="" /></div>
@@ -241,9 +268,9 @@
 									<h2>Ousmane FAYE, doctorant en sciences politiques</h2>
 									<p>Jeune activiste panafricain engagé au Maroc, il est le Président de l'ONG African Citizens Association. Membre actif de la CESAM depuis 2014, il est le conseiller du bureau exécutif de la CESAM Settat et fut Secrétaire Général de l'UGESM Séttat en 2015.
 									Economiste de formation, il est titulaire d'un master en Géopolitique et Relations Internationales à l'Université Cadi AYYAD de Marrakech et actuellement doctorant en Sciences Poliques. Il est aussi enseignat à l'Université Privée de Marrakech.</p>
-									<ul class="actions">
+									{# <ul class="actions">
 										<li><a href="#" class="button">Linkedin</a></li>
-									</ul>
+									</ul> #}
 								</div>
 								<div class="image"><img src="images/ousmane_faye.png" alt="" /></div>
 							</div>
@@ -252,11 +279,12 @@
 							<h3>3</h3>
 							<div class="split reversed">
 								<div class="content">
-									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
-									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
-									<ul class="actions">
+									<h2> Mohamadou Sangaré, éléve en Data and Software Engineer</h2>
+									<p>Passionné par tout ce qui touche à l'Intelligence Artificielle et à la Data, il commence ses études supérieures au Maroc à l'université Hassan I.
+Après avoir eu son DEUG en Maths-Physique et Informatique à la FST de Settat, il intégre l'INSEA</p>
+									{# <ul class="actions">
 										<li><a href="#" class="button">Linkedin</a></li>
-									</ul>
+									</ul> #}
 								</div>
 								<div class="image"><img src="images/sangareimg.jpg" alt="" /></div>
 							</div>
@@ -268,9 +296,9 @@
 									<h2>Aicha Mahamane Souley , Etudiante en Data and Software Engineer </h2>
 									<p>Etudiante très brillante en Data and Software Engineer à L'INSEA  Aicha Mahamane Souley  commence son parcours universitaire au maroc ou elle obtient son diplôme du DEUG à la Fst de Marrakech  
 								        Elle poursuit actuellement ses études à l'INSEA.</p>
-									<ul class="actions">
+									{# <ul class="actions">
 										<li><a href="#" class="button">Linkedin</a></li>
-									</ul>
+									</ul> #}
 								</div>
 								<div class="image"><img src="images/Aichaimg.jpeg" alt="" /></div>
 							</div>
@@ -278,43 +306,44 @@
 						<li>
 							<h3>5</h3>
 							<div class="split reversed">
-								<div class="content" style ="width : 90%">
+								<div class="content">
 									<h2>Diop Amary<br/>Eléve ingénieur en Big Data et Cloud Computing</h2>
-									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
+									<p>Etudiant en deuxième de cycle ingénieur à l'Ecole Normale Supérieure de l'Enseignement Technique de Mohammédia et développeur Freelance</p>
 									<ul class="actions">
-										<li><a href="#" class="button">Linkedin</a></li>
+										<li><a href="https://www.linkedin.com/in/amary-diop-s%C3%A9n%C3%A9gal/" class="button">Linkedin</a></li>
 									</ul>
 								</div>
-								<div class="image"><img src="images/diopAmary.jpg" alt="" style = "width : 350px; height :auto;" /></div>
+								<div class="image"><img src="images/diopAmary.jpg" alt="" /></div>
 							</div>
 						</li>
 						<li>
 							<h3>6</h3>
 							<div class="split reversed">
 								<div class="content">
-									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
-									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
-									<ul class="actions">
+									<h2>Ibrahima Gaye Coulibaly, éléve en software engineering à l'INPT</h2>
+									<p>Passsionné par les innovations technologiques.
+Il a auparavant eu à faire les classes préparatoires Maths Physiques à Marrakech.</p>
+									{# <ul class="actions">
 										<li><a href="#" class="button">Linkedin</a></li>
-									</ul>
+									</ul> #}
 								</div>
-								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
+								<div class="image"><img src="images/couli.jpg" alt="" /></div>
 							</div>
 						</li>
 						<li>
 							<h3>7</h3>
 							<div class="split reversed">
 								<div class="content">
-									<h2>Adipiscing sed impedit volutpat magna cursus lorem</h2>
-									<p>Perspiciatis saepe, mollitia itaque magna etiam dolor sit amet. Sed rerum porro sint iure illo accusantium in amet totam, est. Ipsa nobis ad optio impedit quidem inventore libero, aperiam, nesciunt dolor sit amet.</p>
-									<ul class="actions">
+									<h2>Mouhamadou Mansour KANE étudiant en master un de finance, banque et assurance</h2>
+									<p>Membre actif de l'Union Générale des Etudiant Sénégalais au Maroc (UGESM) et de la CESAM j’eus à occuper le poste de secrétaire générale de l’UGESM et président de la commission scientifique de la CESAM Settat.</p>
+									{# <ul class="actions">
 										<li><a href="#" class="button">Linkedin</a></li>
-									</ul>
+									</ul> #}
 								</div>
-								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
+								<div class="image"><img src="images/der.jpg" alt="" /></div>
 							</div>
 						</li>
-						<li>
+						{# <li>
 							<h3>8</h3>
 							<div class="split reversed">
 								<div class="content">
@@ -339,7 +368,7 @@
 								</div>
 								<div class="image"><img src="images/pic05.jpg" alt="" /></div>
 							</div>
-						</li>
+						</li> #}
 					</ul>
 				</div>
 			</section>

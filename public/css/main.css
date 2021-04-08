@@ -4669,7 +4669,7 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		background-attachment: fixed;
-		background-image: url("../../images/colibri.jpg");
+		background-image: url("../../images/");
 		background-position: bottom left;
 		background-size: cover;
 		border-top: solid 10px #6eb792;

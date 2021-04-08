@@ -57,7 +57,7 @@ class Pret
      */
     private $statut;
 
-   
+
 
     /**
      * @ORM\ManyToOne(targetEntity=Etudiant::class, inversedBy="pret")

@@ -21,6 +21,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 use App\Entity\Reclamation;
 use App\Form\ReclamationType;
+use App\Repository\CotisationRepository;
 use App\Repository\ReclamationRepository;
 
 
@@ -73,17 +74,19 @@ class SecurityController extends AbstractController
     /**
      * @Route("{nom}/{prenom}/{id}/comptes", name="monroutess",methods={"GET","POST"})
      */
-    public function moncompti(Request $request, Etudiant $etudiant, PretRepository $pretRepository, DeclarRemboursementRepository $declarRemboursementRepository)
+    public function moncompti(Request $request, Etudiant $etudiant, PretRepository $pretRepository, DeclarRemboursementRepository $declarRemboursementRepository, CotisationRepository $cotisationRepository)
     {
         // someotherlogic 
         // in this case $entity equals 'some_value'
         //$realentity = $this->get("entity");
+        $cotisation = $cotisationRepository->findByEtudiant($etudiant);
         $var =  $request->get("connexion");
         $var2 = 2021;
         $vark = $var - 2665;
         if ($etudiant->getId() == $vark)
             return $this->render('default/userInterface.html.twig', [
                 'etudiant' => $etudiant,
+                'cotisations' => $cotisation,
                 'prets' => $pretRepository->findByEtudiant($etudiant),
                 'declarations' => $declarRemboursementRepository->findByEtudiant($etudiant)
             ]);

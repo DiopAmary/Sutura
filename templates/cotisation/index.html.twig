@@ -1,5 +1,5 @@
-{% extends 'Templateuseri.html.twig' %}
-{% block title %}Nouveau Cotisation {% endblock %}
+{#  {% extends 'Templateuseri.html.twig' %} 
+{% block title %} Cotisations {% endblock %}
 
 {% block body %}
 
@@ -46,3 +46,76 @@
 	</div>
 	</div>
 {% endblock %}
+ #}
+
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{# <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" /> #}
+        
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" type="text/css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+        <header id="header">
+
+            <!-- Logo -->
+                <div class="logo">
+                    <a href="">Sutura</a><span>Maroc</span>
+                </div>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="{{ path('indexadmin') }}">Administration</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                    </ul>
+                </nav>
+
+        </header>
+            <div class=" w-100" style="position:absolute; top:100px;">
+                <h1>Liste des cotisations</h1>
+                <table class="table table-striped">
+                    <thead>
+                         <tr>
+                            <th>Id</th>
+                            <th>Etudiant</th>
+                            <th>Montant</th>
+                            <th>Periode</th>
+                            <th>Date</th>
+                            <th>Justificatif</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cotisation in cotisations %}
+                        <tr>
+                            <td>{{ cotisation.id }}</td>
+                            <td>{{ cotisation.Etudiant.nom ~ ' ' ~ cotisation.Etudiant.prenom}}</td>
+                            <td>{{ cotisation.montant }}</td>
+                            <td>{{ cotisation.periode }}</td>
+                            <td>{{ cotisation.date ? cotisation.date|date('Y-m-d H:i:s') : '' }}</td>
+                            <td>{{ cotisation.justificatif }}</td>
+                            <td>{{ cotisation.status }}</td>
+                            <td>
+                                {# <a class="btn btn-primary btn-sm" href="{{ path('cotisation_show', {'id': cotisation.id}) }}">Afficher</a> #}
+                                <a class="btn btn-secondary btn-sm" href="{{ path('cotisation_edit', {'id': cotisation.id}) }}">Traiter</a>
+                                <a class="btn btn-danger btn-sm" href="{{ path('cotisation_delete', {'id': cotisation.id}) }}">Supprimer</a>
+                            </td>
+                        </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="7">no records found</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </body>
+</html>

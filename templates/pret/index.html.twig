@@ -1,4 +1,4 @@
-{% extends 'Templateuseri.html.twig' %}
+{# {% extends 'Templateuseri.html.twig' %}
 
 {% block title %}Pret index{% endblock %}
 
@@ -47,3 +47,81 @@
 
  
 {% endblock %}
+ #}
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{# <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" /> #}
+        
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" type="text/css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+        <header id="header">
+
+            <!-- Logo -->
+                <div class="logo">
+                    <a href="">Sutura</a><span>Maroc</span>
+                </div>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="{{ path('indexadmin') }}">Administration</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+
+                    </ul>
+                </nav>
+
+        </header>
+            <div class=" w-100" style="position:absolute; top:100px;">
+                <h1>Liste des demandes de prêt</h1>
+                <table class="table table-striped">
+                    <thead>
+                       <tr>
+                        <th>#</th>
+                        <th>Etudiant</th>
+                        <th>Date</th>
+                        <th>Echeance</th>
+                        <th>Periode</th>
+                        <th>Montant</th>
+                        <th>Type</th>
+                        <th>Rib</th>
+                        <th>Commentaire</th>
+                        <th>Statut</th>
+                        <th>actions</th>
+                     </tr>
+                    </thead>
+                    <tbody>
+                        {% for pret in prets %}
+                            <tr>
+                                <td>{{ pret.id }}</td>
+                                <td>{{ pret.Etudiant.nom ~ ' ' ~ pret.Etudiant.prenom}}</td>
+                                <td>{{ pret.date ? pret.date|date('Y-m-d') : '' }}</td>
+                                <td>{{ pret.echeance ? pret.echeance|date('Y-m-d') : '' }}</td>
+                                <td>{{ pret.periode }}</td>
+                                <td>{{ pret.montant }}</td>
+                                <td>{{ pret.type }}</td>
+                                <td>{{ pret.rib }}</td>
+                                <td>{{ pret.commentaire }}</td>
+                                <td>{{ pret.statut }}</td>
+                                <td>
+                                    <a class="btn btn-secondary btn-sm" href="{{ path('pret_edit', {'id': pret.id}) }}">Traiter</a>
+                                    <a class="btn btn-danger btn-sm" href="{{ path('pret_delete', {'id': pret.id}) }}">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="10">no records found</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    </body>
+</html>

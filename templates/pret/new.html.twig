@@ -6,65 +6,63 @@
 {% block body %} #}
 <!DOCTYPE html>
 <html>
-   <head>
+	<head>
+		<title>Cotisation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{# <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" /> #}
+		
+		<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css"/>
 		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
-      <link href="https://bootswatch.com/4/flatly/bootstrap.min.css"  type="text/css" rel="stylesheet">
-		<link href="https://bootswatch.com/bootstrap.css" rel="stylesheet" type="text/css">
-      <title>Déclaration de remboursement</title>
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
 
+<!-- Header -->
+			<header id="header" class="alt" style="background-color:#6eb792">
 				<!-- Logo -->
 					<div class="logo">
-						<a href="">Sutura</a><span>Maroc</span>
+						<a href="{{ path('default')}}">Sutura</a><span> Maroc</span>
 					</div>
-
 				<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+							<li><a href="{{ path('default')}}">Accueil</a></li>
+							<li>
+								<a href="" class="icon solid fa-angle-down">Actions</a>
+								<ul>
+									<li><a href="{{ path('appregister')}}">S'inscrire</a></li>
+									<li><a href="{{ path('app_login')}}">Se connecter</a></li>
+								</ul>
+							</li>
+							<li><a href="{{ path('cgu')}}">Conditions d'utilisation</a></li>
+							<li><a href="{{ path('faire_don') }}">Faire un don</a></li>
+							<li><a href="{{ path('a_propos')}}">A Propos</a></li>
 						</ul>
 					</nav>
-
 			</header>
             <!-- Main -->
             <div class="ratings">
-               <div class = "container">
-                  <div class = "container">
-                     <div class = "container">
-                        <div class = "container">
-                           <div class = "container">
-                              <div class = "container">
-                                 <div class = "container">
-                                    <div class = "container" style="margin-top:100px">
-                                       <h1  class="alert alert-dismissible alert-success" style="background-color:#70c097; text-align:center">Demander un prêt</h1>
-                                       {{ include('pret/_form.html.twig') }}
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                <div style="margin-top:100px; width:80%; margin-left:10%; margin-right:10%">
+					<h1  class="alert alert-dismissible alert-success" style="background-color:#70c097; text-align:center; color:white"">Demander un prêt</h1>
+					{{ include('pret/_form.html.twig') }}
+				</div>
             </div>
          
 
-      	{# 	<!-- Scripts -->
-			<script src="asset{{('/js/jquery.min.js')}}"  type="text/javascript"></script>
-			<script src="asset{{'/js/jquery.dropotron.min.js'}}"  type="text/javascript"></script>
-			<script src="asset{{('/js/jquery.scrollex.min.js')}}" type="text/javascript"></script>
-			<script src="asset{{('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
-			<script src="asset{{('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
-			<script src="asset{{('/js/browser.min.js')}}"  type="text/javascript"></script>
-			<script src="asset{{('/js/breakpoints.min.js')}}"></script>
-			<script src="asset{{('/js/util.js')}}"></script>
-			<script src="asset{{('/js/main.js')}}"></script> #}
+      	<!-- Scripts -->
+			{% block javascript %}
+			<script src="{{asset('/js/jquery.min.js')}}"   type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.dropotron.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.scrollex.min.js')}}"  type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.scrolly.min.js')}}"  type="text/javascript"></script>
+			<script src="{{asset('/js/jquery.selectorr.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/browser.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/breakpoints.min.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/util.js')}}" type="text/javascript"></script>
+			<script src="{{asset('/js/main.js')}}" type="text/javascript"></script>
+		{% endblock %}
    </body>
 </html>   
 {# {% endblock %} #}

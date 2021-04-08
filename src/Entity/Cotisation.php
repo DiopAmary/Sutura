@@ -89,12 +89,12 @@ class Cotisation
 
         return $this;
     }
-	public function setiDate(Date $date): self
+    /* public function setiDate(Date $date): self
     {
         $this->date = $date;
 
         return $this;
-    }
+    } */
 
     public function getJustificatif(): ?string
     {
@@ -120,28 +120,26 @@ class Cotisation
         return $this;
     }
 
-   
-public  function __toString()
-	{
-		return $this->id ." ".$this->montant;
-		
-	}
-	
-	public function getEtudiantinfo(): ?String
-{
-    return $this->etudiant." ";
-}
 
-public function getEtudiant(): ?Etudiant
-{
-    return $this->etudiant;
-}
+    public  function __toString()
+    {
+        return $this->id . " " . $this->montant;
+    }
 
-public function setEtudiant(?Etudiant $etudiant): self
-{
-    $this->etudiant = $etudiant;
+    public function getEtudiantinfo(): ?String
+    {
+        return $this->etudiant . " ";
+    }
 
-    return $this;
-}
-    
+    public function getEtudiant(): ?Etudiant
+    {
+        return $this->etudiant;
+    }
+
+    public function setEtudiant(?Etudiant $etudiant): self
+    {
+        $this->etudiant = $etudiant;
+
+        return $this;
+    }
 }

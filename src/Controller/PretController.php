@@ -23,8 +23,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\Reclamation;
 use App\Form\ReclamationType;
 use App\Repository\ReclamationRepository;
-
-
+use DateInterval;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
@@ -37,23 +36,24 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 
 /**
- * @Route("/pret")
+ * IsGranted("ROLE_ETUDIANT")
  */
 class PretController extends AbstractController
 {
     /**
      *IsGranted("ROLE_ADMIN")
-     * @Route("/", name="pret_index", methods={"GET"})
+     * @Route("/admin/pret/", name="pret_index", methods={"GET"})
      */
-    public function index(PretRepository $pretRepository): Response
+    public function index(PretRepository $pretRepository, EtudiantRepository $etudiantRepository): Response
     {
+        $prets = $pretRepository->findAll();
         return $this->render('pret/index.html.twig', [
-            'prets' => $pretRepository->findAll(),
+            'prets' => $prets,
         ]);
     }
 
     /**
-     * @Route("{id}/new", name="pret_new", methods={"GET","POST"})
+     * @Route("/pret/{id}/new", name="pret_new", methods={"GET","POST"})
      */
     public function new(Request $request, Etudiant $etudiant, ReclamationRepository $reclamationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
     {
@@ -67,10 +67,17 @@ class PretController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             if ($aicha - 2065 == $mahamadou) {
                 $pret->setStatut("non traité");
-                $date = new \DateTime('@' . strtotime('now'));
+                //$date = new \DateTime('@' . strtotime('now'));
+                $date = new \DateTime('now');
                 $pret->setDate($date);
-                $pret->setEcheance($date);
+                $dateEcheance = new \DateTime('now');
+                $duree = $request->request->get('duree');
+                $interval = new \DateInterval('P' . $duree . 'M');
+                $echeance = $dateEcheance->add($interval);
+
+                $pret->setEcheance($echeance);
                 $pret->setEtudiant($etudiant);
+                $pret->setPeriode(1);
 
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($pret);
@@ -91,7 +98,7 @@ class PretController extends AbstractController
 
     /**
      *IsGranted("ROLE_ADMIN")
-     * @Route("/{id}", name="pret_show", methods={"GET"})
+     * @Route("/admin/pret/{id}", name="pret_show", methods={"GET"})
      */
     public function show(Pret $pret): Response
     {
@@ -102,11 +109,11 @@ class PretController extends AbstractController
 
     /**
      *IsGranted("ROLE_ADMIN")
-     * @Route("/{id}/edit", name="pret_edit", methods={"GET","POST"})
+     * @Route("/admin/pret/{id}/edit", name="pret_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Pret $pret): Response
     {
-        $form = $this->createForm(PretType::class, $pret);
+        /* $form = $this->createForm(PretType::class, $pret);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -118,21 +125,26 @@ class PretController extends AbstractController
         return $this->render('pret/edit.html.twig', [
             'pret' => $pret,
             'form' => $form->createView(),
-        ]);
+        ]); */
+        $pret->setStatut("Traité");
+        $this->getDoctrine()->getManager()->persist($pret);
+        $this->getDoctrine()->getManager()->flush();
+        return $this->redirectToRoute('pret_index');
     }
 
     /**
      *IsGranted("ROLE_ADMIN")
-     * @Route("/{id}", name="pret_delete", methods={"DELETE"})
+     * @Route("/admin/pret/delete/{id}/delete", name="pret_delete")
      */
     public function delete(Request $request, Pret $pret): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $pret->getId(), $request->request->get('_token'))) {
+        /*  if ($this->isCsrfTokenValid('delete' . $pret->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($pret);
             $entityManager->flush();
-        }
-
+        } */
+        $this->getDoctrine()->getManager()->remove($pret);
+        $this->getDoctrine()->getManager()->flush();
         return $this->redirectToRoute('pret_index');
     }
 }
