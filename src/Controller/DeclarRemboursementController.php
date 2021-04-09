@@ -28,6 +28,7 @@ use App\Repository\PretRepository;
 
 use App\Entity\Reclamation;
 use App\Form\ReclamationType;
+use App\Repository\CotisationRepository;
 use App\Repository\ReclamationRepository;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -63,7 +64,7 @@ class DeclarRemboursementController extends AbstractController
     /**
      * @Route("/remboursement/{id}/new", name="declar_remboursement_new", methods={"GET","POST"})
      */
-    public function new(Request $request, Etudiant $etudiant, ReclamationRepository $reclamationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
+    public function new(Request $request, Etudiant $etudiant, CotisationRepository $cotisationRepository, ReclamationRepository $reclamationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
     {
         $declarRemboursement = new DeclarRemboursement();
         $form = $this->createForm(DeclarRemboursementType::class, $declarRemboursement);
@@ -104,10 +105,11 @@ class DeclarRemboursementController extends AbstractController
                 $file->move("C:/wamp64/www/sutura/fichier_justificatif_remboursement", $someNewFilename);
                 $declarRemboursement->setJustificatif($someNewFilename);
 
-
+                $cotisation = $cotisationRepository->findByEtudiant($etudiant);
                 $entityManager->flush();
                 return $this->render('default/userInterface.html.twig', [
                     'etudiant' => $etudiant,
+                    'cotisations' => $cotisation,
                     'prets' => $pretRepository->findByEtudiant($etudiant),
                     'declarations' => $declarRemboursementRepository->findByEtudiant($etudiant)
                 ]);
