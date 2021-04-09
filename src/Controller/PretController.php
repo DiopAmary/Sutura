@@ -22,6 +22,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 use App\Entity\Reclamation;
 use App\Form\ReclamationType;
+use App\Repository\CotisationRepository;
 use App\Repository\ReclamationRepository;
 use DateInterval;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -55,7 +56,7 @@ class PretController extends AbstractController
     /**
      * @Route("/pret/{id}/new", name="pret_new", methods={"GET","POST"})
      */
-    public function new(Request $request, Etudiant $etudiant, ReclamationRepository $reclamationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
+    public function new(Request $request, Etudiant $etudiant, CotisationRepository $cotisationRepository, ReclamationRepository $reclamationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
     {
         $pret = new Pret();
         $form = $this->createForm(PretType::class, $pret);
@@ -82,8 +83,10 @@ class PretController extends AbstractController
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($pret);
                 $entityManager->flush();
+                $cotisation = $cotisationRepository->findByEtudiant($etudiant);
                 return $this->render('default/userInterface.html.twig', [
                     'etudiant' => $etudiant,
+                    'cotisations' => $cotisation,
                     'prets' => $pretRepository->findByEtudiant($etudiant),
                     'declarations' => $declarRemboursementRepository->findByEtudiant($etudiant)
                 ]);
