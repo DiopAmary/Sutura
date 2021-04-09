@@ -51,7 +51,7 @@ class CotisationController extends AbstractController
      */
 
 
-    public function new(Request $request, Etudiant $etudiant, ReclamationRepository $reclamationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
+    public function new(Request $request, Etudiant $etudiant, ReclamationRepository $reclamationRepository, CotisationRepository $cotisationRepository, DeclarRemboursementRepository $declarRemboursementRepository, PretRepository $pretRepository): Response
     {      //$date =new Date('d/m/Y');
         $date = date('Y-m-d H:i:s');
         $cotisation = new Cotisation();
@@ -77,9 +77,10 @@ class CotisationController extends AbstractController
                 $file->move("C:/wamp64/www/sutura/fichier_justificatif", $someNewFilename);
                 $cotisation->setJustificatif($someNewFilename);
                 $entityManager->flush();
-
+                $cotisation = $cotisationRepository->findByEtudiant($etudiant);
                 return $this->render('default/userInterface.html.twig', [
                     'etudiant' => $etudiant,
+                    'cotisations' => $cotisation,
                     'prets' => $pretRepository->findByEtudiant($etudiant),
                     'declarations' => $declarRemboursementRepository->findByEtudiant($etudiant)
                 ]);
