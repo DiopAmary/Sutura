@@ -27,7 +27,7 @@ use App\Entity\DeclarRemboursement;
 use App\Form\DeclarRemboursementType;
 use App\Repository\DeclarRemboursementRepository;
 use App\Entity\Etudiant;
-
+use App\Repository\CotisationRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
@@ -126,7 +126,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("{nom}/{prenom}/{id}/compte", name="monroutes",methods={"GET","POST"})
      */
-    public function moncompte(Request $request, Etudiant $etudiant, PretRepository $pretRepository, DeclarRemboursementRepository $declarRemboursementRepository)
+    public function moncompte(Request $request, CotisationRepository $cotisationRepository, Etudiant $etudiant, PretRepository $pretRepository, DeclarRemboursementRepository $declarRemboursementRepository)
     {
         // some other logic
         // in this case $entity equals 'some_value'
@@ -137,6 +137,7 @@ class RegistrationController extends AbstractController
         if ($etudiant->getId() == $vark)
             return $this->render('default/userInterface.html.twig', [
                 'etudiant' => $etudiant,
+                'cotisation' => $cotisationRepository->findByEtudiant($etudiant),
                 'prets' => $pretRepository->findByEtudiant($etudiant),
                 'declarations' => $declarRemboursementRepository->findByEtudiant($etudiant)
             ]);
