@@ -1,25 +1,60 @@
-{% extends 'Templateuseri.html.twig' %}
+{#  {% extends 'Templateuseri.html.twig' %} 
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Admin Adhérents{% endblock %} #}
 
-{% block body %}
-<h1> liste des utilisateurs </h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{# <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" /> #}
+        
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" type="text/css"/>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+        <header id="header">
+
+            <!-- Logo -->
+                <div class="logo">
+                    <a href="{{ path('default')}}">Sutura</a><span>Maroc</span>
+                </div>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="{{ path('default')}}">Accueil</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                    </ul>
+                </nav>
+
+        </header>
+
+        <div style="position:absolute; top:100px; width:100%;">
+            
+<h1 class="alert alert-success"> liste des adhérents</h1>
 <table class="table">
 <thead>
-     <th> ID  </th>
-     <th> Email </th>
-     <th> Rôle </th>
+     <th> #  </th>
+     <th> Nom </th>
+     <th> Nationalité </th>
+     <th> Ville </th>
+     <th> Etablissement </th>
+     <th> Téléphone </th>
     
      <th> Actions </th>
   </thead>
 <tbody>
-{% for   user in  users  %}
+{% for   etudiant in  etudiants  %}
 
 <tr>
-<td> {{ user.id }}</td>
-<td> {{ user.email }} </td>
-<td>
-{% for role in user.roles %}
+<td> {{ etudiant.id }}</td>
+<td> {{ etudiant.nom ~ " " ~ etudiant.prenom }} </td>
+{#<td>
+ {% for role in user.roles %}
    {% if role == "ROLE_USER" %}
          Utilisateur
     {% elseif role == "ROLE_ADMIN" %}
@@ -27,13 +62,19 @@
 	{% elseif role == "ROLE_ETUDIANT" %}
 	    Etudiant
 	{% endif %}
-{% endfor %}
- </td>
-<td><a href="{{ path('modifieruser',{'id': user.id })}}" class="#" >Modifier</a></td>
+{% endfor %} 
+ </td>#}
+ <td>{{ etudiant.paysOrigine}}</td>
+ <td>{{ etudiant.villeEtude}}</td>
+ <td>{{ etudiant.Etablissement}}</td>
+ <td>{{ etudiant.numTelephone}}</td>
+<td><a href="{{ path('modifieruser',{'id': etudiant.id })}}" class="btn btn-secondary btn-sm" >Rôles</a></td>
 </tr>
 {% else %}
 
 {% endfor %}
 </tbody>
 </table>
-{% endblock %}
+        <div>
+</body>
+</html>

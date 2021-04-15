@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
 use App\Entity\User;
 use App\Form\UserType;
-
+use App\Repository\EtudiantRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
@@ -39,10 +39,13 @@ class AdminController extends AbstractController
      *IsGranted("ROLE_ADMIN")
      * @Route("/utilisateur", name="utilisateurs")
      */
-    public function  usersList(UserRepository $users)
+    public function  usersList(UserRepository $users, EtudiantRepository $etudiantRepository)
     {
+        $etudiant = $etudiantRepository->findAll();
+        $utilisateurs = $users->findAll();
         return $this->render('admin/users.html.twig', [
-            'users' => $users->findAll()
+            'users' => $utilisateurs,
+            'etudiants' => $etudiant
         ]);
     }
 

@@ -32,6 +32,7 @@
 							<li><a href="{{ path('cgu')}}">Conditions d'utilisation</a></li>
 							<li><a href="{{ path('faire_don') }}">Faire un don</a></li>
 							<li><a href="{{ path('a_propos')}}">A Propos</a></li>
+							<li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
 						</ul>
 					</nav>
 			</header>
@@ -63,7 +64,7 @@
 												<p>En temps réel</p>
 											<!-- mettre une variable qui contient l'état de la caisse en pourcentage -->
 										
-													<div class="progress" data-progress="65">65%</div>
+													<div class="progress" data-progress="65">45%</div>
 												
 											</article>
 										</div>
@@ -117,10 +118,10 @@
 													<td>Nombre de remboursements</td>
 													<td>{{ vari }}</td>
 												</tr>
-												<tr>
+												{# <tr>
 													<td>Echéance(prêt)</td>
 													<td>échéance</td>
-												</tr>
+												</tr> #}
 												<tr>
 													{% set varia = 0 %}
 													{% for a in prets %}
@@ -131,10 +132,10 @@
 													<td>Demande en cours de traitement</td>
 											<td> {% if varia==0 %} Neant {% else %} Votre demande de pret est en Cours {% endif %}</td>
 												</tr>
-												<tr>
+												{# <tr>
 													<td>Montant dû:</td>
 													<td>valeur_montant_prêt MAD</td>
-												</tr>
+												</tr> #}
 											</tbody>
 											<tfoot>
 												<tr>
@@ -209,9 +210,9 @@
 											</a></li>
 											<li><a class="icon brands fa-linkedin-in" href="#">
 												<span class="label">LinkedIn</span>
-											</a></li> #}
+											</a></li> 
 										</ul>
-									</div>
+									</div>#}
 								
 								
 							</div>

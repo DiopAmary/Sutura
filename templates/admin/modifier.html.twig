@@ -1,7 +1,41 @@
-{% extends 'Templateuseri.html.twig' %}
+{# {% extends 'Templateuseri.html.twig' %} #}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		{# <link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/main.css" /> #}
+        
+		<link rel="stylesheet" href="{{asset('/css/main.css')}}" type="text/css"/>
+        <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" type="text/css"/>
+	</head>
+	<body class="is-preload">
 
-{% block title %}Hello AdminController!{% endblock %}
-{% block body %}
-<h1> Modifier  l'utilisateur </h1>
-{{ form(userForm)}}
-{% endblock %}
+		<!-- Header -->
+        <header id="header">
+
+            <!-- Logo -->
+                <div class="logo">
+                    <a href="{{ path('default')}}">Sutura</a><span>Maroc</span>
+                </div>
+
+            <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li><a href="{{ path('default')}}">Accueil</a></li>
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                    </ul>
+                </nav>
+
+        </header>
+
+        <div style="position:absolute; top:100px; width:100%;" class="container">
+{# {% block title %}Hello AdminController!{% endblock %} #}
+
+            <h1> Modifier  l'utilisateur </h1>
+            {{ form(userForm)}}
+        <div>
+    </body>
+</html>
+
